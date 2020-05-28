@@ -61,11 +61,10 @@ public class MainActivity extends AppCompatActivity {
                 ta = new TaskAdapter(MainActivity.this, R.layout.row, tasks);
                 lvTask.setAdapter(ta);
 
-                Intent i = getIntent();
-                int returnCode = i.getIntExtra("returnCode", 0);
-                int remindTime = i.getIntExtra("remindTime", 0);
-                String taskName = i.getStringExtra("taskName");
-                String taskDescr = i.getStringExtra("taskDescr");
+                int returnCode = data.getIntExtra("returnCode", 0);
+                int remindTime = data.getIntExtra("remindTime", 0);
+                String taskName = data.getStringExtra("taskName");
+                String taskDescr = data.getStringExtra("taskDescr");
                 if (returnCode == 1){
                     Calendar cal = Calendar.getInstance();
                     cal.add(Calendar.SECOND, remindTime);
